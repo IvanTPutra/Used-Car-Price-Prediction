@@ -20,14 +20,15 @@ app = Flask(__name__)
 def home():
     return render_template('index.html', brands=brands, names=names, transmissions=transmissions, locations=locations)
 
-@app.route('/get_names', methods=['GET'])
+@app.route('/get_names', methods=['POST'])
 def get_names():
-    if request.method == 'GET':
-        selected_brand = request.args.get('selected_brand')
-
+    if request.method == 'POST':
+        # Retrieve the selected_brand and filter the names
+        selected_brand = request.form['selected_brand']
+        
         # Filter the unique car names based on the selected brand
         filtered_names = df[df['Brand'] == selected_brand]['Name'].unique()
-
+        
         # Return the filtered names as a JSON response
         return json.dumps(filtered_names.tolist())
 

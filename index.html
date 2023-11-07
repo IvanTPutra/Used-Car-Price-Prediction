@@ -55,19 +55,21 @@
         // Function to update the car name dropdown based on the selected brand
         function updateNameDropdown() {
           var selected_brand = document.getElementById("brand").value;
-          var baseUrl = "https://github.com/IvanTPutra/Used-Car-Price-Prediction/blob/main/app.py"; 
           var nameDropdown = document.getElementById("name");
       
           // Clear the current options
           nameDropdown.innerHTML = "";
-      
-          // Request the filtered names for the selected brand from the server using the GET method
-          fetch(baseUrl +"/get_names", {
-                method: "POST",
-                // Other request options
-            })
-            .then(response => response.json())
-            .then(data => {
+          
+          // Request the filtered names for the selected brand from the server using the POST method
+          fetch("/get_names", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams({ selected_brand: selected_brand }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
               // Populate the name dropdown with the filtered names
               data.forEach(function (name) {
                 var option = document.createElement("option");
