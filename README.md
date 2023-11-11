@@ -71,3 +71,5 @@ Our analysis of the used car pricing data has uncovered several key insights. To
 
 By implementing these recommendations, you can enhance your used car pricing strategy and offer more accurate prices to buyers and sellers.
 
+### Model Simulation
+link = https://lordevil66.pythonanywhere.com/
