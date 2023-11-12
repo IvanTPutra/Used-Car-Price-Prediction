@@ -4,7 +4,7 @@
 - Model simulation : https://lordevil66.pythonanywhere.com/
 - dashboard : https://public.tableau.com/app/profile/ivan3876/viz/used_car_dashboard/Dashboard1
 - Story : https://public.tableau.com/app/profile/ivan3876/viz/used_car_story/Story1
-- 
+  
 ## Business Scenario and Problem Statement
 
 ### Introduction
